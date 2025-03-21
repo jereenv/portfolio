@@ -8,9 +8,9 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+    "Software Engineer passionate about building scalable and efficient cloud-based systems. Experienced in backend development, distributed architectures, and performance optimization.",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    "Software Engineer with robust professional experience developing scalable cloud solutions using C++, Java, and JavaScript/TypeScript. Demonstrated expertise in multithreaded systems, CI/CD pipelines, and event-driven architectures with practical AWS and Kubernetes deployment. Proven ability to optimize performance, maintain code quality, and support cross-functional team efforts in high-impact environments.",
   avatarUrl: "/me.png",
   skills: [
     "React",
