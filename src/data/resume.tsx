@@ -8,9 +8,9 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer passionate about building scalable and efficient cloud-based systems. Experienced in backend development, distributed architectures, and performance optimization.",
+    "Software Engineer passionate about building scalable, efficient cloud-based systems using Golang, Rust, and AWS. Expertise in backend development, distributed architectures, event-driven designs, and performance optimization. Check out my resume or connect on LinkedIn.",
   summary:
-    "Software Engineer with robust professional experience developing scalable cloud solutions using C++, Java, and JavaScript/TypeScript. Demonstrated expertise in multithreaded systems, CI/CD pipelines, and event-driven architectures with practical AWS and Kubernetes deployment. Proven ability to optimize performance, maintain code quality, and support cross-functional team efforts in high-impact environments.",
+    "Software Engineer with robust professional experience developing scalable cloud solutions using Golang, Rust, C++, Java, Python, and TypeScript/JavaScript. Demonstrated expertise in distributed systems, cloud-native microservices, and event-driven architectures with practical AWS, Kubernetes, gRPC, and actor-model deployments. Proven ability to optimize performance (e.g., 60% lower latency on high-volume queries), maintain code quality, and support cross-functional teams in high-impact environments. Recent Master's in Computer Science from Arizona State University, with a focus on data processing at scale, software security, and machine learning.",
   avatarUrl: "/me_cartoon.png",
   skills: [
     "React",
