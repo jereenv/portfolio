@@ -1,5 +1,6 @@
 "use client";
 
+import { CardSpotlight } from "@/components/card-spotlight";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
@@ -31,8 +32,10 @@ export const ResumeCard = ({
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
+  const hasDescription = Boolean(description && description.trim());
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (description) {
+    if (hasDescription) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
     }
@@ -44,7 +47,8 @@ export const ResumeCard = ({
       className="block cursor-pointer"
       onClick={handleClick}
     >
-      <Card className="flex">
+      <CardSpotlight>
+      <Card className="relative flex bg-background/40 backdrop-blur-sm border-border/60 transition-all duration-300 hover:border-border hover:bg-background/60 hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.35)]">
         <div className="flex-none">
           <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
             <AvatarImage
@@ -73,12 +77,14 @@ export const ResumeCard = ({
                     ))}
                   </span>
                 )}
-                <ChevronRightIcon
-                  className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
-                  )}
-                />
+                {hasDescription && (
+                  <ChevronRightIcon
+                    className={cn(
+                      "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                      isExpanded ? "rotate-90" : "rotate-0"
+                    )}
+                  />
+                )}
               </h3>
               <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
                 {period}
@@ -86,7 +92,7 @@ export const ResumeCard = ({
             </div>
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
-          {description && (
+          {hasDescription && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
@@ -105,6 +111,7 @@ export const ResumeCard = ({
           )}
         </div>
       </Card>
+      </CardSpotlight>
     </Link>
   );
 };

@@ -1,16 +1,32 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "Jereen Valsson",
   initials: "JV",
-  url: "https://jereenv.vercel.app",
+  url: "https://jereenvalsson.com",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer passionate about building scalable, efficient cloud-based systems using Golang, Rust, and AWS. Expertise in backend development, distributed architectures, event-driven designs, and performance optimization. Check out my resume or connect on LinkedIn.",
+    "I build backend infrastructure you don't notice — until it's fast. Mostly Go, Python, and AWS.",
   summary:
-    "Software Engineer with robust professional experience developing scalable cloud solutions using Golang, Rust, C++, Java, Python, and TypeScript/JavaScript. Demonstrated expertise in distributed systems, cloud-native microservices, and event-driven architectures with practical AWS, Kubernetes, gRPC, and actor-model deployments. Proven ability to optimize performance (e.g., 60% lower latency on high-volume queries), maintain code quality, and support cross-functional teams in high-impact environments. Recent Master's in Computer Science from Arizona State University, with a focus on data processing at scale, software security, and machine learning.",
+    "I spend my time on the unglamorous problems — distributed systems, event-driven architectures, query latency, the infra nobody sees until it breaks.\n\nCurrently engineering a Go-based telemetry metering service on Kafka, handling **multi-petabyte** daily data ingestion. Previously cut query latency by **60%** on high-volume analytical workloads, and re-architected a C++ transaction engine into an actor-based distributed system for a **6x throughput gain**.\n\nMostly write **Go** and **Python**, comfortable picking up whatever the problem needs. At home on AWS, GCP, and Kubernetes. Master's in Computer Science from Arizona State University.",
+  currentRole: {
+    company: "Grafana Labs",
+    href: "https://grafana.com/",
+  },
+  highlights: [
+    { value: "Multi-PB", label: "Daily telemetry data handled" },
+    { value: "60%", label: "Lower latency on high-volume queries" },
+    { value: "6x", label: "Throughput gain via actor-based redesign" },
+  ],
+  now: {
+    updatedOn: "April 2026",
+    items: [
+      "Engineering a Go-based telemetry metering service on Kafka — multi-PB daily throughput",
+      "Going deeper on Kafka internals, distributed tracing, and telemetry pipelines",
+    ],
+  },
   avatarUrl: "/me_cartoon.png",
   skills: [
     "React",
@@ -27,59 +43,45 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
     social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/jereenv",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/jereenvalsson",
         icon: Icons.linkedin,
-
         navbar: true,
-      },
-      X: {
-        name: "X",
-        url: "https://x.com/home",
-        icon: Icons.x,
-
-        navbar: true,
-      },
-      Youtube: {
-        name: "Youtube",
-        url: "https://youtube.com",
-        icon: Icons.youtube,
-        navbar: true,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-
-        navbar: false,
       },
     },
   },
 
   work: [
-        {
+    {
+      company: "Grafana Labs",
+      href: "https://grafana.com/",
+      badges: [],
+      location: "San Francisco, CA",
+      title: "Software Engineer",
+      logoUrl: "/grafana.svg",
+      start: "Dec 2025",
+      end: "Present",
+      description: " ",
+    },
+    {
       company: "Sigma Computing",
       href: "https://www.sigmacomputing.com/",
       badges: [],
       location: "San Francisco, CA",
-      title: "Software Engineer (Contract)",
+      title: "Software Engineer",
       logoUrl: "/sigma.png",
-      start: "Aug 2024",
-      end: "Oct 2024",
+      start: "Aug 2025",
+      end: "Oct 2025",
       description: " "
         // "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
     },
