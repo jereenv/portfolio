@@ -1,3 +1,4 @@
+import { CardSpotlight } from "@/components/card-spotlight";
 import { LiveTime } from "@/components/live-time";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -17,7 +18,7 @@ export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-6">
+        <CardSpotlight className="mx-auto w-full max-w-2xl space-y-6">
           <div className="gap-4 flex justify-between items-center">
             <div className="flex-col flex flex-1 space-y-3">
               <BlurFade delay={BLUR_FADE_DELAY}>
@@ -80,7 +81,7 @@ export default function Page() {
               </div>
             </BlurFade>
           </div>
-        </div>
+        </CardSpotlight>
       </section>
 
       <section id="now">
@@ -225,6 +226,33 @@ export default function Page() {
             </div>
           </BlurFade>
         </div>
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <p className="mx-auto max-w-[500px] pt-8 text-center text-[10px] text-muted-foreground/60">
+            Built with{" "}
+            <Link
+              href="https://nextjs.org"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-2 hover:text-foreground hover:underline"
+            >
+              Next.js
+            </Link>
+            ,{" "}
+            <Link
+              href="https://tailwindcss.com"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-2 hover:text-foreground hover:underline"
+            >
+              Tailwind
+            </Link>
+            , and a{" "}
+            <kbd className="inline-flex items-center gap-0.5 rounded border border-border/60 bg-background/40 px-1 py-0.5 text-[9px] font-mono">
+              ⌘K
+            </kbd>{" "}
+            obsession.
+          </p>
+        </BlurFade>
       </section>
     </main>
   );

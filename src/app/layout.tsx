@@ -1,3 +1,4 @@
+import { CommandPalette } from "@/components/command-palette";
 import Navbar from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -79,6 +80,7 @@ export default function RootLayout({
             />
           </div>
           <ScrollProgress />
+          <CommandPalette />
           <TooltipProvider delayDuration={0}>
             {children}
             <Navbar />
