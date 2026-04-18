@@ -68,8 +68,8 @@ export default async function OG() {
             display: "flex",
           }}
         >
-          I build backend infrastructure you don&apos;t notice — until it&apos;s fast.
-          Mostly Go, Python, and AWS.
+          Good backends are invisible. I make them fast too. Mostly Go,
+          Python, and AWS.
         </div>
         <div
           style={{

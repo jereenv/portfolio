@@ -8,7 +8,7 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "I build backend infrastructure you don't notice — until it's fast. Mostly Go, Python, and AWS.",
+    "Good backends are invisible. I make them fast too. Mostly Go, Python, and AWS.",
   summary:
     "I spend my time on the unglamorous problems — distributed systems, event-driven architectures, query latency, the infra nobody sees until it breaks.\n\nCurrently engineering a Go-based telemetry metering service on Kafka, handling **multi-petabyte** daily data ingestion. Previously cut query latency by **60%** on high-volume analytical workloads, and re-architected a C++ transaction engine into an actor-based distributed system for a **6x throughput gain**.\n\nMostly write **Go** and **Python**, comfortable picking up whatever the problem needs. At home on AWS, GCP, and Kubernetes. Master's in Computer Science from Arizona State University.",
   currentRole: {

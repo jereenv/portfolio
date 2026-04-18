@@ -59,8 +59,7 @@ export default function Page() {
               </BlurFade>
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <p className="max-w-[600px] text-sm text-muted-foreground md:text-base">
-                  I build backend infrastructure you don&apos;t notice — until
-                  it&apos;s fast. Mostly{" "}
+                  Good backends are invisible. I make them fast too. Mostly{" "}
                   <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text font-medium text-transparent">
                     Go
                   </span>
