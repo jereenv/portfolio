@@ -65,7 +65,7 @@ export const DATA = {
     {
       company: "Grafana Labs",
       href: "https://grafana.com/",
-      badges: [],
+      badges: ["Go", "Kafka", "Kubernetes", "Prometheus", "ArgoCD"],
       location: "San Francisco, CA",
       title: "Software Engineer",
       logoUrl: "/grafana.svg",
@@ -76,50 +76,46 @@ export const DATA = {
     {
       company: "Sigma Computing",
       href: "https://www.sigmacomputing.com/",
-      badges: [],
+      badges: ["Go", "Rust", "gRPC", "BigQuery", "Snowflake"],
       location: "San Francisco, CA",
       title: "Software Engineer",
       logoUrl: "/sigma.png",
       start: "Aug 2025",
       end: "Oct 2025",
-      description: " "
-        // "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+      description: " ",
     },
     {
       company: "Tau Xyz",
       href: "https://blockstalker.io/",
-      badges: [],
+      badges: ["C++", "Kubernetes", "PostgreSQL", "React"],
       location: "Tempe, AZ",
       title: "Software Engineer Intern",
       logoUrl: "/blockstalker.png",
       start: "Jun 2024",
       end: "Aug 2024",
-      description: " "
-        // "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+      description: " ",
     },
     {
       company: "ZS Associates",
-      badges: [],
+      badges: ["Go", "AWS", "EKS", "Lambda", "DynamoDB"],
       href: "https://zs.com",
       location: "Pune, India",
       title: "Software Engineer",
       logoUrl: "/zs.png",
       start: "Jul 2022",
       end: "Jul 2023",
-      description: " "
-        //"Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+      description: " ",
     },
     {
       company: "Amazon",
       href: "https://amazon.com/",
-      badges: [],
+      badges: ["AWS Glue", "Lambda", "SNS", "Spark"],
       location: "Hyderabad, India",
       title: "Software Development Engineer Intern",
       logoUrl: "/amazon.png",
       start: "Jan 2022",
       end: "Jun 2022",
-      description: " "
-        //"Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python.",
+      description: " ",
     },
     // {
     //   company: "St Louis University",
@@ -154,6 +150,12 @@ export const DATA = {
       logoUrl: "/asu.png",
       start: "2023",
       end: "2025",
+      coursework: [
+        "Data Processing at Scale",
+        "Software Security",
+        "Statistical ML",
+        "Data Mining",
+      ],
     },
     {
       school: "Ramdeobaba University",
@@ -162,6 +164,12 @@ export const DATA = {
       logoUrl: "/rbu.png",
       start: "2018",
       end: "2022",
+      coursework: [
+        "Data Structures & Algorithms",
+        "Operating Systems",
+        "OOP",
+        "Artificial Intelligence",
+      ],
     },
   ],
   projects: [

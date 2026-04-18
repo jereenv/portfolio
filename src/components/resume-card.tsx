@@ -64,19 +64,6 @@ export const ResumeCard = ({
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
                 {title}
-                {badges && (
-                  <span className="inline-flex gap-x-1">
-                    {badges.map((badge, index) => (
-                      <Badge
-                        variant="secondary"
-                        className="align-middle text-xs"
-                        key={index}
-                      >
-                        {badge}
-                      </Badge>
-                    ))}
-                  </span>
-                )}
                 {hasDescription && (
                   <ChevronRightIcon
                     className={cn(
@@ -91,6 +78,19 @@ export const ResumeCard = ({
               </div>
             </div>
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+            {badges && badges.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-1">
+                {badges.map((badge, index) => (
+                  <Badge
+                    key={index}
+                    variant="secondary"
+                    className="border border-border/60 bg-background/40 px-1.5 py-0 text-[10px] font-normal text-muted-foreground transition-colors hover:border-purple-400/40 hover:text-foreground"
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
+            )}
           </CardHeader>
           {hasDescription && (
             <motion.div

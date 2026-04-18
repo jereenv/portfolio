@@ -115,9 +115,19 @@ export default function Page() {
           <h2 className="text-xl font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mt-2">
-            {DATA.summary}
-          </Markdown>
+          <div className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert mt-2">
+            <Markdown
+              components={{
+                strong: ({ children }) => (
+                  <strong className="bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400 bg-clip-text font-bold text-transparent">
+                    {children}
+                  </strong>
+                ),
+              }}
+            >
+              {DATA.summary}
+            </Markdown>
+          </div>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
           <div className="mt-6 grid grid-cols-3 gap-3">
@@ -176,6 +186,7 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
+                badges={education.coursework}
                 period={`${education.start} - ${education.end}`}
               />
             </BlurFade>

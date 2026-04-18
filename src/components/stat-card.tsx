@@ -35,7 +35,7 @@ function parseNumeric(value: string): { num: number; suffix: string } | null {
   return { num: parseInt(match[1], 10), suffix: match[2] };
 }
 
-function useCounter(target: string, inView: boolean, duration = 900) {
+function useCounter(target: string, inView: boolean, duration = 1800) {
   const [display, setDisplay] = useState(() => {
     const parsed = parseNumeric(target);
     return parsed ? `0${parsed.suffix}` : target;
