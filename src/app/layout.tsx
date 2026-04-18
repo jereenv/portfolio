@@ -17,15 +17,28 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name} — Software Engineer`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  keywords: [
+    "Jereen Valsson",
+    "Software Engineer",
+    "Backend Engineer",
+    "Distributed Systems",
+    "Go",
+    "Python",
+    "Grafana Labs",
+    "Kubernetes",
+    "Kafka",
+  ],
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
   openGraph: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} — Software Engineer`,
     description: DATA.description,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: DATA.name,
     locale: "en_US",
     type: "website",
   },
@@ -41,13 +54,52 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} — Software Engineer`,
+    description: DATA.description,
     card: "summary_large_image",
   },
-  verification: {
-    google: "",
-    yandex: "",
+};
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: DATA.name,
+  url: DATA.url,
+  image: `${DATA.url}${DATA.avatarUrl}`,
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: DATA.currentRole.company,
+    url: DATA.currentRole.href,
   },
+  alumniOf: DATA.education.map((e) => ({
+    "@type": "EducationalOrganization",
+    name: e.school,
+    url: e.href,
+  })),
+  sameAs: Object.values(DATA.contact.social).map((s) => s.url),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Francisco",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  knowsAbout: [
+    "Distributed Systems",
+    "Backend Engineering",
+    "Go",
+    "Python",
+    "Kubernetes",
+    "Kafka",
+    "AWS",
+  ],
 };
 
 export default function RootLayout({
@@ -57,6 +109,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6 relative",

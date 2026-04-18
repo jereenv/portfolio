@@ -105,6 +105,14 @@
     transform-origin: 70% 80%;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer,
+    .animate-pulse-dot,
+    .animate-wave {
+      animation: none !important;
+    }
+  }
+
   h3 code {
     @apply !text-lg md:!text-xl;
   }
