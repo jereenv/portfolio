@@ -7,8 +7,6 @@ const ROLES = [
   "Backend engineer.",
   "Distributed systems.",
   "Latency nerd.",
-  "Observability lifer.",
-  "Kafka whisperer.",
 ];
 
 export function RoleCycler() {

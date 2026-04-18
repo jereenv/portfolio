@@ -1,5 +1,4 @@
 import { CardSpotlight } from "@/components/card-spotlight";
-import { Journey } from "@/components/journey";
 import { LiveTime } from "@/components/live-time";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -145,12 +144,6 @@ export default function Page() {
               />
             ))}
           </div>
-        </BlurFade>
-      </section>
-
-      <section id="journey">
-        <BlurFade delay={BLUR_FADE_DELAY * 5.5}>
-          <Journey />
         </BlurFade>
       </section>
 
