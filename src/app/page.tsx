@@ -3,6 +3,7 @@ import { LiveTime } from "@/components/live-time";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ResumeCard } from "@/components/resume-card";
+import { RoleCycler } from "@/components/role-cycler";
 import { StatCard } from "@/components/stat-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
@@ -53,6 +54,9 @@ export default function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 1.8}>
+                <RoleCycler />
+              </BlurFade>
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <p className="max-w-[600px] text-sm text-muted-foreground md:text-base">
                   I build backend infrastructure you don&apos;t notice — until
