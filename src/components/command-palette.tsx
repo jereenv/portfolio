@@ -106,7 +106,9 @@ export function CommandPalette() {
         hint: s.url.replace(/^https?:\/\//, ""),
         icon: s.icon,
         group: "Links" as const,
-        run: () => window.open(s.url, "_blank", "noopener,noreferrer"),
+        run: () => {
+          window.open(s.url, "_blank", "noopener,noreferrer");
+        },
         keywords: s.name.toLowerCase(),
       })),
       {
@@ -122,12 +124,13 @@ export function CommandPalette() {
         label: "Open jereenvalsson.com",
         icon: Link2,
         group: "Actions",
-        run: () =>
+        run: () => {
           window.open(
             "https://jereenvalsson.com",
             "_blank",
             "noopener,noreferrer"
-          ),
+          );
+        },
       },
       {
         id: "toggle-theme",
