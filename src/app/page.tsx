@@ -148,24 +148,42 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 6}>
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 7 + id * 0.05}
-            >
-              <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
-                period={`${work.start} - ${work.end ?? "Present"}`}
-                description={work.description}
-              />
-            </BlurFade>
-          ))}
+          <div className="relative">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute bottom-8 left-[23px] top-8 w-px bg-gradient-to-b from-emerald-400/60 via-purple-500/30 to-transparent"
+            />
+            <div className="flex flex-col gap-y-3">
+              {DATA.work.map((work, id) => (
+                <BlurFade
+                  key={work.company}
+                  delay={BLUR_FADE_DELAY * 7 + id * 0.05}
+                  className="relative"
+                >
+                  {id === 0 && (
+                    <span
+                      aria-hidden
+                      className="absolute left-[19px] top-[19px] z-10 flex size-2.5"
+                    >
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500 ring-2 ring-background" />
+                    </span>
+                  )}
+                  <ResumeCard
+                    key={work.company}
+                    logoUrl={work.logoUrl}
+                    altText={work.company}
+                    title={work.company}
+                    subtitle={work.title}
+                    href={work.href}
+                    badges={work.badges}
+                    period={`${work.start} - ${work.end ?? "Present"}`}
+                    description={work.description}
+                  />
+                </BlurFade>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
