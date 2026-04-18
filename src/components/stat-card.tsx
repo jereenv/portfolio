@@ -36,32 +36,37 @@ function parseNumeric(value: string): { num: number; suffix: string } | null {
 }
 
 function useCounter(target: string, inView: boolean, duration = 900) {
-  const [display, setDisplay] = useState(target);
-  const parsed = parseNumeric(target);
+  const [display, setDisplay] = useState(() => {
+    const parsed = parseNumeric(target);
+    return parsed ? `0${parsed.suffix}` : target;
+  });
 
   useEffect(() => {
+    const parsed = parseNumeric(target);
     if (!parsed) {
       setDisplay(target);
       return;
     }
-    if (!inView) {
-      setDisplay(`0${parsed.suffix}`);
-      return;
-    }
+    if (!inView) return;
+
     const start = performance.now();
     let raf = 0;
+    let last = -1;
     const tick = (now: number) => {
       const t = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - t, 3);
       const current = Math.round(parsed.num * eased);
-      setDisplay(`${current}${parsed.suffix}`);
+      if (current !== last) {
+        last = current;
+        setDisplay(`${current}${parsed.suffix}`);
+      }
       if (t < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, target, duration, parsed]);
+  }, [inView, target, duration]);
 
-  return parsed ? display : target;
+  return display;
 }
 
 export function StatCard({ value, label, index }: StatCardProps) {

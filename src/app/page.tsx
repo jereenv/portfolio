@@ -1,6 +1,7 @@
 import { CardSpotlight } from "@/components/card-spotlight";
 import { LiveTime } from "@/components/live-time";
 import BlurFade from "@/components/magicui/blur-fade";
+import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ResumeCard } from "@/components/resume-card";
 import { StatCard } from "@/components/stat-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -46,16 +47,12 @@ export default function Page() {
                   <LiveTime />
                 </div>
               </BlurFade>
-              <BlurFade delay={BLUR_FADE_DELAY * 1.5} yOffset={8}>
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  <span className="animate-shimmer bg-gradient-to-r from-foreground via-purple-400 to-foreground bg-clip-text text-transparent">
-                    Hi, I&apos;m {DATA.name.split(" ")[0]}
-                  </span>{" "}
-                  <span className="inline-block origin-[70%_80%] animate-wave">
-                    👋
-                  </span>
-                </h1>
-              </BlurFade>
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY * 1.5}
+                className="animate-shimmer bg-gradient-to-r from-foreground via-purple-400 to-foreground bg-clip-text text-transparent text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yOffset={8}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+              />
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <p className="max-w-[600px] text-sm text-muted-foreground md:text-base">
                   I build backend infrastructure you don&apos;t notice — until
