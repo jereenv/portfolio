@@ -1,6 +1,8 @@
 import { CommandPalette } from "@/components/command-palette";
+import { KonamiConfetti } from "@/components/konami-confetti";
 import Navbar from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { ShortcutsOverlay } from "@/components/shortcuts-overlay";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
@@ -139,6 +141,8 @@ export default function RootLayout({
           </div>
           <ScrollProgress />
           <CommandPalette />
+          <ShortcutsOverlay />
+          <KonamiConfetti />
           <TooltipProvider delayDuration={0}>
             {children}
             <Navbar />
