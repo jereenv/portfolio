@@ -10,20 +10,19 @@ export const DATA = {
   description:
     "Good backends are invisible. I make them fast too. Mostly Go, Python, and AWS.",
   summary:
-    "I spend my time on the unglamorous problems — distributed systems, event-driven architectures, query latency, the infra nobody sees until it breaks.\n\nCurrently engineering a Go-based telemetry metering service on Kafka, handling **multi-petabyte** daily data ingestion. Previously cut query latency by **60%** on high-volume analytical workloads, and re-architected a C++ transaction engine into an actor-based distributed system for a **6x throughput gain**.\n\nMostly write **Go** and **Python**, comfortable picking up whatever the problem needs. At home on AWS, GCP, and Kubernetes. Master's in Computer Science from Arizona State University.",
+    "I spend my time on the unglamorous problems — distributed systems, event-driven architectures, query latency, the infra nobody sees until it breaks.\n\nWork spans high-throughput Go services on Kafka at **multi-petabyte** daily scale, a **60%** cut in query latency on high-volume analytical workloads, and re-architecting a C++ transaction engine into an actor-based distributed system for a **6x throughput gain**.\n\nMostly write **Go** and **Python**, comfortable picking up whatever the problem needs. At home on AWS, GCP, and Kubernetes. Master's in Computer Science from Arizona State University.",
   currentRole: {
     company: "Grafana Labs",
     href: "https://grafana.com/",
   },
   highlights: [
-    { value: "Multi-PB", label: "Daily telemetry data handled" },
+    { value: "Multi-PB", label: "Daily data throughput on Kafka" },
     { value: "60%", label: "Lower latency on high-volume queries" },
     { value: "6x", label: "Throughput gain via actor-based redesign" },
   ],
   now: {
     updatedOn: "April 2026",
     items: [
-      "Engineering a Go-based telemetry metering service on Kafka — multi-PB daily throughput",
       "Going deeper on Kafka internals, distributed tracing, and telemetry pipelines",
     ],
   },
