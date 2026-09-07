@@ -12,7 +12,6 @@ import { Panel } from "@/components/panel";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import {
-  Activity,
   ChevronDown,
   ChevronRight,
   Cpu,
@@ -76,17 +75,6 @@ const STACK: Array<{ label: string; category: "lang" | "infra" | "data" | "front
 ];
 
 // ─── Data transforms ────────────────────────────────────────────────
-// Language mix based on his job badges + skills emphasis
-const LANG_MIX = [
-  { name: "Go", pct: 38, color: "#00ADD8" },
-  { name: "Python", pct: 20, color: "#3776AB" },
-  { name: "TypeScript", pct: 14, color: "#3178C6" },
-  { name: "C++", pct: 10, color: "#00599C" },
-  { name: "Rust", pct: 8, color: "#CE422B" },
-  { name: "Java", pct: 6, color: "#E76F00" },
-  { name: "Other", pct: 4, color: "#64748b" },
-];
-
 // "Running processes" — what I'm working on / focused on, styled like `ps aux`
 const PROCESSES = [
   { pid: "0001", state: "running", cpu: "42.0", cmd: "backend-engineer @grafana-labs", color: "emerald" },
@@ -130,31 +118,6 @@ function Sparkline({ points, color = "#22d3ee", className }: { points: number[];
       <path d={area} fill={`url(#grad-${color.replace("#", "")})`} />
       <path d={toPath} fill="none" stroke={color} strokeWidth="1.5" />
     </svg>
-  );
-}
-
-function LangBars() {
-  return (
-    <div className="space-y-3">
-      {LANG_MIX.map((l, i) => (
-        <div key={l.name} className="space-y-1">
-          <div className="flex items-baseline justify-between font-mono text-[11px]">
-            <span className="text-slate-300">{l.name}</span>
-            <span className="text-slate-500">{l.pct}%</span>
-          </div>
-          <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.04]">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${l.pct}%` }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.08 * i, ease: "easeOut" }}
-              className="h-full rounded-full"
-              style={{ backgroundColor: l.color, boxShadow: `0 0 12px ${l.color}80` }}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
   );
 }
 
@@ -528,11 +491,11 @@ export default function Page() {
             </div>
           </Panel>
 
-          {/* Row 4: Stack graph + Language bars */}
+          {/* Row 4: Stack graph */}
           <Panel
             title="stack graph"
             subtitle={`${STACK.length} nodes · rotating`}
-            span="col-span-12 lg:col-span-8"
+            span="col-span-12"
             icon={<Cpu className="size-3" />}
             contentClassName="p-0"
             delay={0.1}
@@ -559,16 +522,6 @@ export default function Page() {
                 </span>
               </div>
             </div>
-          </Panel>
-
-          <Panel
-            title="language mix"
-            subtitle="self-assessed"
-            span="col-span-12 lg:col-span-4"
-            icon={<Activity className="size-3" />}
-            delay={0.15}
-          >
-            <LangBars />
           </Panel>
 
           {/* Row 5: Running processes + Education */}
